@@ -1,0 +1,229 @@
+@import "~bulma/sass/utilities/initial-variables"
+
+// Config vars
+// Kalidi logo brand color: #FD461E
+$kaldi-red: #D64000
+$kaldi-red-invert: #fff
+
+$primary: $kaldi-red
+$primary-invert: $kaldi-red-invert
+$body-color: #333
+$body-size: 18px
+
+$navbar-height: 4rem
+$navbar-padding-horizontal: 4rem
+$navbar-item-color: #fbfcfc
+$navbar-item-hover-color: #fff
+
+$card-shadow: none
+
+.content .taglist
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+  margin-right: 1.5rem
+  margin-top: 1.5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  align-items: center
+  li
+    padding: 0 2rem 1rem 0
+    margin-bottom: 1.5rem
+    margin-top: 0
+
+// Helper Classes
+.full-width-image-container
+  width: 100vw
+  height: 400px
+  position: relative
+  left: 50%
+  right: 50%
+  margin: 5em -50vw
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+
+.margin-top-0
+  margin-top: 0 !important
+
+@import "~bulma"
+
+.navbar
+  text-transform: uppercase
+//  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease
+ 
+//   +tablet
+//    .navbar
+//      line-height: 5rem
+//      transition: line-height 0.3s ease
+
+.navbar
+  border-bottom: 1px solid hsla(0,0%,100%,.2)
+  transition: background .3s ease,border .3s ease,box-shadow .3s ease
+  font-size: 1.1rem
+
+.navbar .navbar-brand, .navbar .navbar-end
+  padding-left: 2.25rem
+
+.navbar a
+  padding: 2rem 0.75rem
+
+.navbar.is-active .navbar-menu a
+  padding: 1rem 0.75rem
+
+.navbar a[aria-current="page"]
+  border-bottom: 1px solid #fbfcfc
+
+.navbar.scrolled
+  background: #fff
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.06)
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.06)
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06)
+  color: #111
+  transition: background-color 0.5s ease
+
+.navbar.is-active, 
+  background: #fff
+
+.navbar.is-active .navbar-item, .navbar.is-active .navbar-burger, .navbar.is-active .navbar-burger:hover
+  color: #111
+
+
+
+.navbar.scrolled .navbar-item, .navbar.scrolled .navbar-link, .navbar.scrolled .navbar-burger
+  color: #111
+
+.navbar .navbar-burger, .navbar .navbar-burger:hover
+  padding: 2.75rem 3rem
+  color: #fff
+
+.navbar .navbar-burger span
+  width: 20px
+  
+
+.hero
+  background-color: #999
+  .title
+    color: #fbfcfc
+    text-shadow: 0 0 10px #111, 0 0 6px #111, 0 0 2px #111
+    letter-spacing: 1px
+    font-size: 3.5rem
+    font-weight: bold
+  .subtitle
+    color: #fbfcfc
+    text-shadow: 0 0 10px #111, 0 0 6px #111, 0 0 2px #111
+    text-transform: uppercase
+  .hero-body
+    padding: 6rem 1.5rem
+
+.homepage .hero
+  min-height: 100vh
+
+.homepage .hero .title
+  text-align: left
+  text-shadow: 0 2px 4px #111
+
+.homepage .hero-body h1
+ margin-top: 35vh
+ margin-left: 5vh
+
+@media screen and (min-width: 769px) 
+  .homepage .hero-body h1
+    margin-top: 10vh
+    margin-left: 10vh
+
+@media screen and (min-width: 1280px)
+  .homepage .hero-body h1
+    margin-top: 15vh
+    margin-left: 20vh
+  .navbar .navbar-brand
+    padding-left: 0
+
+.homepage h2 
+  margin-bottom: 2rem
+
+.section 
+  padding: 3rem 1rem
+
+.footer
+  opacity: .6
+.footer .menu-list
+  display: flex
+  flex-direction: row
+  justify-content: center
+  li
+    list-style: none
+    margin: 0
+
+.about-me p
+  line-height: 2
+  color: #555
+.about-me .image
+  max-width: 400px
+  margin: auto
+
+.photo-highlight.section
+  padding-left: 0
+  padding-right: 0
+
+.photo-highlight .full-width-photo-container
+  width: 100vw
+  height: 70vh  
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-size: cover
+  box-shadow: inset 0 0 8px rgba(0,0,0,.4)
+
+.photo-highlight .button.is-link.is-outlined
+  border-color: white
+  color: white
+.photo-highlight .button.is-link.is-outlined:hover
+  border-color: white
+  color: white
+  background-color: transparent
+
+.events-section .latest-events li
+  list-style: none
+  .title 
+    color: #3273dc
+
+.calendar
+  height: 800px
+
+.calendar .rbc-event.teaching
+  background-color: #008000
+
+.event .event-details
+  padding-left: 0
+  padding-right: 0
+  dt
+    font-weight: bold
+    color: #555
+  dd 
+    list-style: none
+    margin: 0 0 10px
+
+.photo-gallery img 
+  max-width: inherit
+
+
+.latest-posts .column 
+  margin-bottom: 15px;
+
+.card .card-content
+    padding: .5rem 0
+
+.author
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 25px;
+
+.embed-container 
+  margin-bottom: 1rem;
