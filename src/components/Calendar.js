@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticQuery, graphql, navigate } from "gatsby"
-import "react-big-calendar/lib/css/react-big-calendar.css"
 import BigCalendar from 'react-big-calendar'
 import moment from 'moment'
 const localizer = BigCalendar.momentLocalizer(moment) 
