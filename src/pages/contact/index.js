@@ -37,10 +37,11 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout pageTitle="Contact" heroImage={this.props.data.hero}>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-        <h1>Contact</h1>
+        <div className="container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+            <div className="section content">
+        <p>To contact me about a private lesson, class, photo session, or anything else please email <em>brian@acrowithbrian.com</em> or use the form below.</p>
         <form
           name="contact"
           method="post"
@@ -81,7 +82,8 @@ export default class Index extends React.Component {
         </form>
         </div>
         </div>
-        </section>
+        </div>
+        </div>
       </Layout>
     );
   }
