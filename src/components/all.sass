@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import "~react-big-calendar/lib/css/react-big-calendar.css"
 
 // Config vars
 // Kalidi logo brand color: #FD461E
@@ -119,6 +120,7 @@ $card-shadow: none
   .hero-body
     padding: 6rem 1.5rem
 
+/* homepage */
 .homepage .hero
   min-height: 100vh
 
@@ -194,12 +196,14 @@ $card-shadow: none
   .title 
     color: #3273dc
 
+/* event page */
 .calendar
   height: 800px
 
 .calendar .rbc-event.teaching
   background-color: #008000
 
+/* individual event pages */
 .event .event-details
   padding-left: 0
   padding-right: 0
@@ -209,7 +213,10 @@ $card-shadow: none
   dd 
     list-style: none
     margin: 0 0 10px
+  .mapContainer
+    height: 300px
 
+/* photo page */
 .photo-gallery img 
   max-width: inherit
 
