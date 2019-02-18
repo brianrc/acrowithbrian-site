@@ -4,7 +4,7 @@ route: events/wanderlust-snowshoe-2017
 date: 2017-06-09
 layout: Event
 hero: /img/events/wanderlust-snowshoe-2017.jpg
-category: Class
+category: Festival
 teaching: true
 start: June 9, 2017 7:00 AM
 end: June 11, 2017 5:00 PM

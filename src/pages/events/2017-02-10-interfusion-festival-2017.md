@@ -4,7 +4,7 @@ route: events/interfusion-festival-2017
 date: 2017-02-10
 layout: Event
 hero: /img/events-1920x.jpg
-category: Workshop
+category: Festival
 teaching: true
 start: February 10, 2017
 end: February 12, 2017

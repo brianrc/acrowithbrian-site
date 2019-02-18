@@ -4,7 +4,7 @@ route: events/dc-acrobatics-convention-2018
 date: 2018-10-12
 layout: Event
 hero: /img/events-1920x.jpg
-category: Workshop
+category: Festival
 teaching: true
 start: October 12, 2018
 end: October 14, 2018
