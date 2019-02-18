@@ -67,8 +67,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss', // must be after other CSS plugins
       options: {
-        //ignore: ['react-big-calendar.css'],
-        purgeOnly: ['bulma/'],
+        ignore: ['react-big-calendar.css'],
       }
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
