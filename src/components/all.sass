@@ -215,6 +215,13 @@ $card-shadow: none
 .calendar .rbc-event.teaching
   background-color: #008000
 
+@media screen and (max-width: 769px) 
+  .calendar .rbc-toolbar
+    flex-direction: column
+  .calendar .rbc-btn-group
+    order: 1
+    margin: 5px 0
+
 /* individual event pages */
 .event .event-details
   padding-left: 0
