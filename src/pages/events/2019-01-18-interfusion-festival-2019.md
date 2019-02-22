@@ -6,7 +6,7 @@ hero: /img/events-1920x.jpg
 category: Festival
 teaching: true
 start: January 18, 2019
-end: January 21, 2019
+end: January 21, 2019 2:00 PM
 allDay: true
 desc: Interfusion Festival is a 3 day celebration of the human spirit.
 location: Westin Alexandria

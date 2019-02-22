@@ -6,8 +6,8 @@ layout: Event
 hero: /img/events-1920x.jpg
 category: Festival
 teaching: true
-start: October 12, 2018
-end: October 14, 2018
+start: October 12, 2018 5:00 PM
+end: October 14, 2018 7:00 PM
 allDay: true
 desc: DC Acrobatics Convention is 3 amazing days of partner acrobatics.
 location: Xtreme Acro and Cheer

@@ -1,12 +1,12 @@
 ---
-title: AcroLove World Gathering
+title: AcroLove World
 date: 2019-01-18
 layout: Event
 hero: /img/events-1920x.jpg
 category: Festival
 teaching: true
-start: October 4, 2019
-end: October 6, 2019
+start: October 4, 2019 9:00 AM
+end: October 6, 2019 6:00 PM
 allDay: true
 desc: Come join us for the largest gathering of acrobats in North America.
 location: Oregon Convention Center

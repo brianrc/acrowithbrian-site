@@ -6,8 +6,8 @@ layout: Event
 hero: /img/events-1920x.jpg
 category: Festival
 teaching: false
-start: December 29, 2018
-end: December 31, 2018
+start: December 29, 2018 8:00 AM
+end: January 1, 2019 2:00 AM
 allDay: true
 desc: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
 location: Sheraton San Diego Hotel & Marina

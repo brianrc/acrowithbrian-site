@@ -6,8 +6,8 @@ layout: Event
 hero: /img/events-1920x.jpg
 category: Festival
 teaching: false
-start: May 25, 2018
-end: May 28, 2018
+start: May 25, 2018 2:00 PM
+end: May 28, 2018 5:00 PM
 allDay: true
 desc: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
 location: Performance Garage
