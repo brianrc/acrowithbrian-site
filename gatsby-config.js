@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Brian Cruikshank Acro',
-    description: 'Brian Cruikshank is an Acro Yoga teacher based in Washington, DC area. Check out his classes, workshops, and acro photography here.',
+    description: 'An Acro Yoga teacher based in Washington DC area. Check out Brian\'s classes, workshops, and acro photography here.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
