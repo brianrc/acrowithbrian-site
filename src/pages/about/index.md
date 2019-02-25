@@ -8,9 +8,9 @@ Hi! I'm Brian Cruikshank. I am a certified Acro Revolution teacher based in Wash
 
 I've been practicing acro for over 6 years, traveling the country, and learning some of the most advanced movements and techniques. 
 
-Some places I've taught acro at include NY Acrofest, AcroLove East Coast, DC Acrobatic Convention, and the Interfusion Festival. 
+Some large events I've taught acro at include NY Acrofest, AcroLove East Coast, DC Acrobatic Convention, and the Interfusion Festival. 
 
-When I'm not teaching I'm always learning. I'm also an avid rock climber, traveler, an activist for things that matter.
+When I'm not teaching I'm always learning. I'm also an avid rock climber, traveler, and activist for things that matter.
 
 ### Private Lessons
 I offer 1.5 hour private acro lessons for $90. You can include up to 2 friends at no extra charge.
