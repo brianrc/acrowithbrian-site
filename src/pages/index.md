@@ -4,7 +4,6 @@ metaTitle: Brian Cruikshank Acro
 layout: Homepage
 hero: /img/home-1920x.jpg
 path: /
-image: /img/jumbotron.jpg
 aboutPhoto: /img/brian-640x.jpg
 photoHighlight: /img/photo-highlight-1920x.jpg
 aboutPhotoBig: /img/brian-1080x.jpg
