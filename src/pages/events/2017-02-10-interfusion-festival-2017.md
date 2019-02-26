@@ -9,7 +9,7 @@ teaching: true
 start: February 10, 2017
 end: February 12, 2017
 allDay: true
-desc: Interfusion Festival is a 3 day celebration of the human spirit.
+description: Interfusion Festival is a 3 day celebration of the human spirit.
 location: Westin Alexandria
 address: 400 Courthouse Sq, Alexandria, VA 22314
 ---

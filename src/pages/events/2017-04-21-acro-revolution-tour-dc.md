@@ -9,7 +9,7 @@ teaching: false
 start: April 21, 2017
 end: April 23, 2017
 allDay: true
-desc: Join founders of acropedia.org & acrorevolution.com for 12 hours of acrobatics.
+description: Join founders of acropedia.org & acrorevolution.com for 12 hours of acrobatics.
 location: Dance Loft on 14
 address: 4618 14th St NW, Washington, DC 20011
 ---

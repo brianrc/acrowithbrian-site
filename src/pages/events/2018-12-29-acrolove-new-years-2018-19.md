@@ -9,7 +9,7 @@ teaching: false
 start: December 29, 2018 8:00 AM
 end: January 1, 2019 2:00 AM
 allDay: true
-desc: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
+description: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
 location: Sheraton San Diego Hotel & Marina
 address: 1380 Harbor Island Dr, San Diego, CA 92101
 ---

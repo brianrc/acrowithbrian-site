@@ -9,7 +9,7 @@ teaching: true
 start: October 12, 2018 5:00 PM
 end: October 14, 2018 7:00 PM
 allDay: true
-desc: DC Acrobatics Convention is 3 amazing days of partner acrobatics.
+description: DC Acrobatics Convention is 3 amazing days of partner acrobatics.
 location: Xtreme Acro and Cheer
 address: 14702 Southlawn Ln, Rockville, MD 20850
 ---

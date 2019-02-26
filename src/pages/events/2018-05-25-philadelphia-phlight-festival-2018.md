@@ -9,7 +9,7 @@ teaching: false
 start: May 25, 2018 2:00 PM
 end: May 28, 2018 5:00 PM
 allDay: true
-desc: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
+description: Come spend New Years in sunny San Diego on the water with tons of acro and a supportive community of talented practitioners and amazing teachers.
 location: Performance Garage
 address: 1515 Brandywine St, Philadelphia, PA 19130
 ---

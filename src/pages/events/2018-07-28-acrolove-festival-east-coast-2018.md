@@ -9,7 +9,7 @@ teaching: true
 start: July 28, 2018 9:00 AM
 end: July 29, 2018 6:00 PM
 allDay: true
-desc: A weekend in the US Capitol doing tons of acro with a supportive community of talented practitioners and amazing teachers.
+description: A weekend in the US Capitol doing tons of acro with a supportive community of talented practitioners and amazing teachers.
 location: Walter E. Washington Convention Center
 address: 801 Mt Vernon Pl NW, Washington, DC 20001
 ---

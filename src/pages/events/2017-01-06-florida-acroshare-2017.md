@@ -9,7 +9,7 @@ teaching: false
 start: January 6, 2017
 end: January 8, 2017
 allDay: true
-desc: A weekend of fun in the sunshine state with all things acrobatic.
+description: A weekend of fun in the sunshine state with all things acrobatic.
 location: Rock Solid Allstars
 address: 8100 Park Blvd, Pinellas Park, Florida 33781
 ---

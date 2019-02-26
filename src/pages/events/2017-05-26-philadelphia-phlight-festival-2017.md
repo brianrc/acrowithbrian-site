@@ -9,7 +9,7 @@ teaching: false
 start: May 26, 2017
 end: May 29, 2017
 allDay: true
-desc: The third Annual Philly Phlight Festival! ACROPOP! This year we are providing you with an amazing event and all the acro you could dream of and more!
+description: The third Annual Philly Phlight Festival! ACROPOP! This year we are providing you with an amazing event and all the acro you could dream of and more!
 location: Pig Iron School
 address: 1417 N 2nd St, Philadelphia, Pennsylvania 19122
 ---

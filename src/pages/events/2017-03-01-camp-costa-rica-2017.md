@@ -9,7 +9,7 @@ teaching: false
 start: March 1, 2017
 end: March 5, 2017
 allDay: true
-desc: This fun-filled campout in the tropical rainforest is dedicated to the practice of cooperation through acro, movement arts, music, and play.
+description: This fun-filled campout in the tropical rainforest is dedicated to the practice of cooperation through acro, movement arts, music, and play.
 location: Platanillo, Costa Rica
 address: San José Province, Platanillo, Costa Rica
 ---
