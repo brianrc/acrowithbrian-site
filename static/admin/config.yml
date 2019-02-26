@@ -52,6 +52,25 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero", name: "hero", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/photos/index.md"
+        label: "Photos"
+        name: "photos"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero", name: "hero", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "Homepage"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero", name: "hero", widget: "image"}
+          - {label: "Hero Title", name: "metaTitle", widget: "string"}
+          - {label: "About Photo", name: "aboutPhoto", widget: "image"}       
+          - {label: "About Bio", name: "body", widget: "text"}
+          - {label: "Photo Highlight Photo", name: "photoHighlight", widget: "image"}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
