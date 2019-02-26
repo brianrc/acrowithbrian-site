@@ -6,8 +6,8 @@ layout: Event
 hero: /img/events-1920x.jpg
 category: Workshop
 teaching: true
-start: October 30, 2016 14:00:00
-end: October 30, 2016 16:00:00
+start: October 30, 2016 2:00 PM
+end: October 30, 2016 4:00 PM
 location: Dance Loft on 14
 address: 4618 14th St NW, Washington, DC 20011
 ---
