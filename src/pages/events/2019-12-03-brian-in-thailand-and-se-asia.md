@@ -6,7 +6,7 @@ hero: /img/events-1920x.jpg
 category: Trip
 teaching: false
 start: December 3, 2019 8:00 AM
-end: May 31, 2020 10:00 PM
+end: August 31, 2020 10:00 PM
 location: SE Asia
 address: SE Asia
 ---
