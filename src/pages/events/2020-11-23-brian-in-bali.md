@@ -6,7 +6,7 @@ hero: /img/events-1920x.jpg
 category: Trip
 teaching: false
 start: November 23, 2020 12:00 PM
-end: May 23, 2021 5:00 PM
+end: October 11, 2021 5:00 PM
 location: Bali, Indonesia
 address: Bali, Indonesia
 ---
