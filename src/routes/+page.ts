@@ -1,8 +1,24 @@
 import type { Post } from '$lib/types';
 
+interface HomepageMetadata {
+    title: string;
+    metaTitle?: string;
+    hero?: string;
+    aboutPhoto?: string;
+    photoHighlight?: string;
+    aboutPhotoBig?: string;
+    facebookImage?: string;
+}
+
+const page = import.meta.glob('/src/content/pages/index.md', { eager: true });
 const posts = import.meta.glob('/src/content/blog/*.md', { eager: true });
 
 export function load() {
+    const pageData = Object.values(page)[0] as {
+        default: ConstructorOfATypedSvelteComponent;
+        metadata: HomepageMetadata
+    };
+
     const allPosts: Post[] = [];
 
     for (const path in posts) {
@@ -15,10 +31,13 @@ export function load() {
         });
     }
 
-    // Sort by date descending and take first 6
     allPosts.sort((a, b) => {
         return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
     });
 
-    return { latestPosts: allPosts.slice(0, 6) };
+    return {
+        content: pageData.default,
+        metadata: pageData.metadata,
+        latestPosts: allPosts.slice(0, 6)
+    };
 }

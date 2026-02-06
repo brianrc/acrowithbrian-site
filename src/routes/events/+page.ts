@@ -1,8 +1,21 @@
 import type { Event } from '$lib/types';
 
+interface PageMetadata {
+    title: string;
+    hero?: string;
+    path?: string;
+    layout?: string;
+}
+
+const page = import.meta.glob('/src/content/pages/events.md', { eager: true });
 const events = import.meta.glob('/src/content/events/*.md', { eager: true });
 
 export function load() {
+    const pageData = Object.values(page)[0] as {
+        default: ConstructorOfATypedSvelteComponent;
+        metadata: PageMetadata
+    };
+
     const allEvents: Event[] = [];
     const now = new Date();
 
@@ -16,14 +29,17 @@ export function load() {
         });
     }
 
-    // Sort by start date
     allEvents.sort((a, b) => {
         return new Date(a.metadata.start).getTime() - new Date(b.metadata.start).getTime();
     });
 
-    // Separate into upcoming and past
     const upcoming = allEvents.filter(e => new Date(e.metadata.start) >= now);
     const past = allEvents.filter(e => new Date(e.metadata.start) < now).reverse();
 
-    return { upcoming, past };
+    return {
+        content: pageData.default,
+        metadata: pageData.metadata,
+        upcoming,
+        past
+    };
 }

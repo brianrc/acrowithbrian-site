@@ -17,17 +17,17 @@
 </script>
 
 <svelte:head>
-	<title>Events | Brian Cruikshank Acro</title>
+	<title>{data.metadata.title} | Brian Cruikshank Acro</title>
 	<meta name="description" content="Upcoming acro events and workshops with Brian Cruikshank" />
 </svelte:head>
 
-<Hero title="Events" image="/img/events-1920x.jpg" />
+<Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/events-1920x.jpg'} />
 
 <section class="py-16 px-4">
 	<div class="max-w-4xl mx-auto">
-		<p class="text-lg text-muted mb-12 text-center">
-			I travel around quite a bit. You can find me at these upcoming events!
-		</p>
+		<div class="prose prose-lg mx-auto text-center mb-12">
+			<data.content />
+		</div>
 
 		{#if upcoming.length > 0}
 			<h2 class="text-2xl font-bold mb-6">Upcoming Events</h2>

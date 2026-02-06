@@ -3,7 +3,7 @@
 	import type { Post } from '$lib/types';
 
 	let { data } = $props();
-	const posts: Post[] = data.posts;
+	const posts = $derived(data.posts as Post[]);
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-US', {
@@ -15,17 +15,17 @@
 </script>
 
 <svelte:head>
-	<title>Blog | Brian Cruikshank Acro</title>
+	<title>{data.metadata.title} | Brian Cruikshank Acro</title>
 	<meta name="description" content="Acrobatic tutorials and videos by Brian Cruikshank" />
 </svelte:head>
 
-<Hero title="Blog" image="/img/blog-1920x.jpg" />
+<Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/blog-1920x.jpg'} />
 
 <section class="py-16 px-4">
 	<div class="max-w-4xl mx-auto">
-		<p class="text-lg text-muted mb-12 text-center">
-			Check out my acrobatic tutorials and flow videos!
-		</p>
+		<div class="prose prose-lg mx-auto text-center mb-12">
+			<data.content />
+		</div>
 
 		{#if posts.length === 0}
 			<p class="text-center text-muted">No posts yet.</p>

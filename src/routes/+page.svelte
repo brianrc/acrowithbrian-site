@@ -6,14 +6,14 @@
 </script>
 
 <svelte:head>
-	<title>Brian Cruikshank Acro</title>
+	<title>{data.metadata.metaTitle ?? data.metadata.title}</title>
 	<meta name="description" content="Partner Acrobatics with Brian Cruikshank" />
 </svelte:head>
 
 <!-- Hero Section -->
 <Hero
-	title="Hi, I'm Brian."
-	image="/img/home-1920x.jpg"
+	title={data.metadata.title}
+	image={data.metadata.hero ?? '/img/home-1920x.jpg'}
 	imagePosition="50% 30%"
 	variant="homepage"
 />
@@ -23,16 +23,17 @@
 	<div class="max-w-6xl mx-auto">
 		<div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
 			<div class="w-full md:w-1/2 max-w-[400px] mx-auto">
-				<img src="/img/brian-640x.jpg" alt="Brian Cruikshank" class="w-full rounded-lg shadow-lg" />
+				<img
+					src={data.metadata.aboutPhoto ?? '/img/brian-640x.jpg'}
+					alt="Brian Cruikshank"
+					class="w-full rounded-lg shadow-lg"
+				/>
 			</div>
 			<div class="w-full md:w-1/2 text-center md:text-left">
 				<h2 class="text-3xl font-bold mb-6">About Me</h2>
-				<p class="text-muted leading-8 text-lg mb-6">
-					I am a certified Acro Revolution teacher based in Washington, DC. Over the years I've
-					traveled the country going to many festivals, training hard, and playing with some of the
-					most advanced acrobats. In that time I've learned some unique skills and valuable
-					techniques. I want to share this knowledge with you.
-				</p>
+				<div class="text-muted leading-8 text-lg mb-6 prose prose-lg">
+					<data.content />
+				</div>
 				<a
 					href="/about"
 					class="inline-block border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors"
@@ -48,7 +49,9 @@
 <section class="py-0">
 	<div
 		class="h-[70vh] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
-		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('/img/photo-highlight-1920x.jpg'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
+		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('{data
+			.metadata.photoHighlight ??
+			'/img/photo-highlight-1920x.jpg'}'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
 	>
 		<a
 			href="/photos"

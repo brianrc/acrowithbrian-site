@@ -6,20 +6,17 @@
 </script>
 
 <svelte:head>
-	<title>Photos | Brian Cruikshank Acro</title>
+	<title>{data.metadata.title} | Brian Cruikshank Acro</title>
 	<meta name="description" content="Acrobatic photography by Brian Cruikshank" />
 </svelte:head>
 
-<Hero title="Photos" image="/img/photos-1920x.jpg" />
+<Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/photos-1920x.jpg'} />
 
 <section class="py-16 px-4">
 	<div class="max-w-6xl mx-auto">
-		<p class="text-lg text-muted mb-12 text-center">
-			I have a passion for photography and discovering different shapes our bodies can create. The
-			following photos were all taken with my professional camera.
-			<a href="/contact" class="text-primary hover:underline">Contact me</a> if you're interested in a
-			photography session.
-		</p>
+		<div class="prose prose-lg mx-auto text-center mb-12">
+			<data.content />
+		</div>
 
 		<PhotoGallery images={data.images} />
 	</div>

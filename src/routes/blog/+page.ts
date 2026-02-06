@@ -1,14 +1,25 @@
 import type { Post } from '$lib/types';
 
-// Import all markdown files from the content/blog directory
+interface PageMetadata {
+    title: string;
+    hero?: string;
+    path?: string;
+    layout?: string;
+}
+
+const page = import.meta.glob('/src/content/pages/blog.md', { eager: true });
 const posts = import.meta.glob('/src/content/blog/*.md', { eager: true });
 
 export function load() {
+    const pageData = Object.values(page)[0] as {
+        default: ConstructorOfATypedSvelteComponent;
+        metadata: PageMetadata
+    };
+
     const allPosts: Post[] = [];
 
     for (const path in posts) {
         const post = posts[path] as { metadata: Post['metadata'] };
-        // Keep the full filename as slug (including date prefix)
         const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
         allPosts.push({
@@ -17,10 +28,13 @@ export function load() {
         });
     }
 
-    // Sort by date descending
     allPosts.sort((a, b) => {
         return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
     });
 
-    return { posts: allPosts };
+    return {
+        content: pageData.default,
+        metadata: pageData.metadata,
+        posts: allPosts
+    };
 }
