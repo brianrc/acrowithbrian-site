@@ -55,3 +55,38 @@ body {
 .text-shadow-hero {
 	text-shadow: 0 0 10px #111, 0 0 6px #111, 0 0 2px #111;
 }
+
+/* ============================================
+   CALENDAR EVENT CATEGORIES
+   ============================================ */
+
+/* Category colors */
+.ec-event.cat-festival {
+	background-color: #8b5cf6 !important;
+	border-color: #7c3aed !important;
+}
+
+.ec-event.cat-workshop {
+	background-color: #10b981 !important;
+	border-color: #059669 !important;
+}
+
+.ec-event.cat-class {
+	background-color: #3b82f6 !important;
+	border-color: #2563eb !important;
+}
+
+.ec-event.cat-jam {
+	background-color: #f59e0b !important;
+	border-color: #d97706 !important;
+}
+
+.ec-event.cat-convention {
+	background-color: #ec4899 !important;
+	border-color: #db2777 !important;
+}
+
+/* Teaching indicator */
+.ec-event.teaching {
+	box-shadow: inset 4px 0 0 #ef4444;
+}

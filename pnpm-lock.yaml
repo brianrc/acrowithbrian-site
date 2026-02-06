@@ -14,6 +14,9 @@ importers:
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
+      '@event-calendar/core':
+        specifier: ^5.3.2
+        version: 5.3.2
       '@sveltejs/adapter-netlify':
         specifier: ^5.2.4
         version: 5.2.4(@sveltejs/kit@2.50.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.49.2)(vite@7.3.1(@types/node@24.10.11)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.49.2)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11)(jiti@2.6.1)(lightningcss@1.30.2)))
@@ -436,6 +439,9 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@event-calendar/core@5.3.2':
+    resolution: {integrity: sha512-/gk3tIVmnCrNyJEJZ3CuWWw1F666YpbSqtZRBz9cqYG5eqG8gdinfd8JamuiouxIFmRrg7Xn8rOpEIbn159AVw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1748,6 +1754,10 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@event-calendar/core@5.3.2':
+    dependencies:
+      svelte: 5.49.2
 
   '@humanfs/core@0.19.1': {}
 
