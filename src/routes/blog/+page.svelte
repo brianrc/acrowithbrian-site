@@ -22,7 +22,7 @@
 <Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/blog-1920x.jpg'} />
 
 <section class="py-16 px-4">
-	<div class="max-w-4xl mx-auto">
+	<div class="max-w-6xl mx-auto">
 		<div class="prose prose-lg mx-auto text-center mb-12">
 			<data.content />
 		</div>

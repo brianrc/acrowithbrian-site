@@ -64,7 +64,7 @@
 
 <!-- Events Section -->
 <section class="py-16 px-4">
-	<div class="max-w-4xl mx-auto text-center">
+	<div class="max-w-6xl mx-auto text-center">
 		<h2 class="text-3xl font-bold mb-4">Events</h2>
 		<p class="text-muted mb-8">
 			I travel around quite a bit. You can find me at these upcoming events!

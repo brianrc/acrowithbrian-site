@@ -15,7 +15,7 @@
 <Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/about-1920x.jpg'} />
 
 <section class="py-16 px-4">
-	<div class="max-w-3xl mx-auto">
+	<div class="max-w-6xl mx-auto">
 		<div class="prose prose-lg mx-auto">
 			<data.content />
 		</div>
