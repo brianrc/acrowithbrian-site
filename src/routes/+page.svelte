@@ -1,25 +1,88 @@
+<script lang="ts">
+	import Hero from '$lib/components/Hero.svelte';
+</script>
+
 <svelte:head>
 	<title>Brian Cruikshank Acro</title>
 	<meta name="description" content="Partner Acrobatics with Brian Cruikshank" />
 </svelte:head>
 
 <!-- Hero Section -->
-<section
-	class="min-h-screen flex items-center justify-center bg-cover bg-center bg-gray-500"
-	style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0)), url('/images/hero-placeholder.jpg');"
->
-	<div class="text-center px-4 mt-[-10vh]">
-		<h1 class="text-4xl md:text-6xl font-bold text-white text-shadow-hero">
-			Brian Cruikshank Acro
-		</h1>
+<Hero
+	title="Hi, I'm Brian."
+	image="/img/home-1920x.jpg"
+	imagePosition="50% 30%"
+	variant="homepage"
+/>
+
+<!-- About Section -->
+<section class="py-16 px-4">
+	<div class="max-w-6xl mx-auto">
+		<div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+			<div class="w-full md:w-1/2 max-w-[400px] mx-auto">
+				<img src="/img/brian-640x.jpg" alt="Brian Cruikshank" class="w-full rounded-lg shadow-lg" />
+			</div>
+			<div class="w-full md:w-1/2 text-center md:text-left">
+				<h2 class="text-3xl font-bold mb-6">About Me</h2>
+				<p class="text-muted leading-8 text-lg mb-6">
+					I am a certified Acro Revolution teacher based in Washington, DC. Over the years I've
+					traveled the country going to many festivals, training hard, and playing with some of the
+					most advanced acrobats. In that time I've learned some unique skills and valuable
+					techniques. I want to share this knowledge with you.
+				</p>
+				<a
+					href="/about"
+					class="inline-block border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors"
+				>
+					Learn More
+				</a>
+			</div>
+		</div>
 	</div>
 </section>
 
-<!-- Placeholder content to test scroll -->
-<section class="py-20 px-4 max-w-4xl mx-auto">
-	<h2 class="text-2xl font-semibold mb-4">Welcome</h2>
-	<p class="text-muted leading-relaxed">
-		This is a placeholder section to test the navbar scroll behavior. Scroll down to see the navbar
-		transition from transparent to white.
-	</p>
+<!-- Photo Highlight Parallax -->
+<section class="py-0">
+	<div
+		class="h-[70vh] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
+		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('/img/photo-highlight-1920x.jpg'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
+	>
+		<a
+			href="/photos"
+			class="border-2 border-white text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors"
+		>
+			View Photos
+		</a>
+	</div>
+</section>
+
+<!-- Events Section -->
+<section class="py-16 px-4">
+	<div class="max-w-4xl mx-auto text-center">
+		<h2 class="text-3xl font-bold mb-4">Events</h2>
+		<p class="text-muted mb-8">
+			I travel around quite a bit. You can find me at these upcoming events!
+		</p>
+		<p class="text-muted mb-8">No upcoming events yet.</p>
+		<a
+			href="/events"
+			class="inline-block border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors"
+		>
+			More Events
+		</a>
+	</div>
+</section>
+
+<!-- Blog Section -->
+<section class="py-16 px-4 bg-gray-100">
+	<div class="max-w-4xl mx-auto text-center">
+		<h2 class="text-3xl font-bold mb-8">Blog</h2>
+		<p class="text-muted mb-8">Check back soon for new posts!</p>
+		<a
+			href="/blog"
+			class="inline-block border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors"
+		>
+			More Posts
+		</a>
+	</div>
 </section>
