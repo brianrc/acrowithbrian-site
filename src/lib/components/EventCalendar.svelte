@@ -36,7 +36,7 @@
 	// Calendar options
 	const options = $derived({
 		view: 'listMonth',
-		date: new Date(),
+		date: new Date('2016-01-01'),
 		headerToolbar: {
 			start: 'prev,next today',
 			center: 'title',
@@ -49,7 +49,8 @@
 			timeGridWeek: 'Week'
 		},
 		views: {
-			listMonth: { duration: { months: 1 } },
+			// List view spans 20 years to show all past and future events
+			listMonth: { duration: { years: 20 } },
 			dayGridMonth: { duration: { months: 1 } },
 			timeGridWeek: { duration: { weeks: 1 } }
 		},
