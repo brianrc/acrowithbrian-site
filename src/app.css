@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 /* ============================================
    BRAND TOKENS & CUSTOM THEME
@@ -45,6 +46,7 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
 .no-scrollbar::-webkit-scrollbar {
 	display: none;
 }
