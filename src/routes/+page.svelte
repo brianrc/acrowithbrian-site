@@ -1,5 +1,8 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import LatestPosts from '$lib/components/LatestPosts.svelte';
+
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -75,9 +78,11 @@
 
 <!-- Blog Section -->
 <section class="py-16 px-4 bg-gray-100">
-	<div class="max-w-4xl mx-auto text-center">
+	<div class="max-w-6xl mx-auto text-center">
 		<h2 class="text-3xl font-bold mb-8">Blog</h2>
-		<p class="text-muted mb-8">Check back soon for new posts!</p>
+
+		<LatestPosts posts={data.latestPosts} />
+
 		<a
 			href="/blog"
 			class="inline-block border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors"
