@@ -20,7 +20,7 @@
 
 <section
 	class="relative flex items-center bg-cover bg-gray-500
-		{isHomepage ? 'min-h-screen' : 'min-h-[50vh]'}"
+		{isHomepage ? 'min-h-screen' : 'min-h-[70vh]'}"
 	style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0)), url('{image}'); background-position: {imagePosition};"
 >
 	<div
