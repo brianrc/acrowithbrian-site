@@ -99,4 +99,8 @@
 	.event-calendar :global(.ec-button) {
 		text-transform: capitalize;
 	}
+
+	.event-calendar :global(.ec-event) {
+		cursor: pointer;
+	}
 </style>
