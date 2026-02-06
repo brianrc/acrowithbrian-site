@@ -4,14 +4,6 @@
 
 	let { data } = $props();
 	const posts = $derived(data.posts as Post[]);
-
-	function formatDate(dateStr: string): string {
-		return new Date(dateStr).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-	}
 </script>
 
 <svelte:head>
@@ -45,7 +37,6 @@
 						{/if}
 						<div class="p-4">
 							<h3 class="font-semibold text-lg mb-2">{post.metadata.title}</h3>
-							<p class="text-sm text-muted">{formatDate(post.metadata.date)}</p>
 						</div>
 					</a>
 				{/each}

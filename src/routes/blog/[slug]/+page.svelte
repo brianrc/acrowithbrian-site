@@ -2,14 +2,6 @@
 	import Hero from '$lib/components/Hero.svelte';
 
 	let { data } = $props();
-
-	function formatDate(dateStr: string): string {
-		return new Date(dateStr).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-	}
 </script>
 
 <svelte:head>
@@ -23,12 +15,11 @@
 
 <article class="py-16 px-4">
 	<div class="max-w-3xl mx-auto">
-		<div class="text-muted text-sm mb-8 pb-4 border-b border-gray-200">
-			{#if data.metadata.author}
-				Post by {data.metadata.author} •
-			{/if}
-			{formatDate(data.metadata.date)}
-		</div>
+		{#if data.metadata.author}
+			<div class="text-muted text-sm mb-8 pb-4 border-b border-gray-200">
+				Post by {data.metadata.author}
+			</div>
+		{/if}
 
 		<div class="prose prose-lg max-w-none">
 			<data.content />
