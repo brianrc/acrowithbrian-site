@@ -3,6 +3,7 @@ import type { Event } from '$lib/types';
 interface PageMetadata {
     title: string;
     hero?: string;
+    heroImage?: unknown;
     path?: string;
     layout?: string;
 }

@@ -3,7 +3,7 @@ title: AcroLove New Years 2018-19
 route: events/acrolove-new-years-2018-19
 date: 2018-12-29
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Festival
 teaching: false
 start: December 29, 2018 8:00 AM

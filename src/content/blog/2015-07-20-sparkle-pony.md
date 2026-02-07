@@ -4,7 +4,7 @@ route: sparkle-pony
 date: 2015-07-20
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/sparkle-pony.jpg
+hero: /src/lib/assets/imgs/blog/sparkle-pony.jpg
 thumbnail: ../assets/blog/sparkle-pony.jpg
 category: Washing Machines
 ---

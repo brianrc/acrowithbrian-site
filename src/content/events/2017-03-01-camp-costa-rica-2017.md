@@ -3,7 +3,7 @@ title: CAMP Costa Rica - Cooperative Arts, Movement, & Play
 route: events/camp-costa-rica-2017
 date: 2017-03-01
 layout: Event
-hero: /img/events/camp-costa-rica-2017.jpg
+hero: /src/lib/assets/imgs/pages/events/camp-costa-rica-2017.jpg
 category: Festival
 teaching: false
 start: March 1, 2017

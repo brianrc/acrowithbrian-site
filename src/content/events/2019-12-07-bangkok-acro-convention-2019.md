@@ -2,7 +2,7 @@
 title: Bangkok Acro Convention 2019
 date: 2019-12-07
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Festival
 teaching: false
 start: December 7, 2019 9:00 AM

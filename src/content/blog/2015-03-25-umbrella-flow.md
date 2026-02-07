@@ -4,7 +4,7 @@ route: umbrella-flow
 date: 2015-03-25
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/umbrella-flow.jpg
+hero: /src/lib/assets/imgs/blog/umbrella-flow.jpg
 thumbnail: ../assets/blog/umbrella-flow-640x480.jpg
 category: Washing Machines
 ---

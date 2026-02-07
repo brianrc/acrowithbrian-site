@@ -3,7 +3,7 @@ title: AcroLove Festival - East Coast
 route: events/acrolove-festival-east-coast-2018
 date: 2018-07-28
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Festival
 teaching: true
 start: July 28, 2018 9:00 AM

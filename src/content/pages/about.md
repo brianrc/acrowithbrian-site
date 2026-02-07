@@ -2,7 +2,7 @@
 layout: 'page'
 path: /about
 title: About
-hero: /img/about-1920x.jpg
+hero: /src/lib/assets/imgs/pages/about-1920x.jpg
 ---
 Hi! I'm Brian Cruikshank. I am a certified Acro Revolution teacher based in Washington, D.C.
 

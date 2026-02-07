@@ -3,7 +3,7 @@ title: ALL the Washing Machines!
 route: events/all-the-washing-machines
 date: 2016-10-30
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Workshop
 teaching: true
 start: October 30, 2016 2:00 PM

@@ -4,7 +4,7 @@ route: acro-twilight-zone
 date: 2015-03-26
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/acro-twilight-zone.jpg
+hero: /src/lib/assets/imgs/blog/acro-twilight-zone.jpg
 thumbnail: ../assets/blog/acro-twilight-zone-640x480.jpg
 category: Washing Machines
 ---

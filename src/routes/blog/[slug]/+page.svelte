@@ -11,7 +11,10 @@
 	{/if}
 </svelte:head>
 
-<Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/blog-1920x.jpg'} />
+<Hero
+	title={data.metadata.title}
+	image={data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/blog-1920x.jpg'}
+/>
 
 <article class="py-16 px-4">
 	<div class="max-w-3xl mx-auto">

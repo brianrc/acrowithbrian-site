@@ -4,7 +4,7 @@ route: ninja-peacock
 date: 2015-07-11
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/ninja-peacock.jpg
+hero: /src/lib/assets/imgs/blog/ninja-peacock.jpg
 thumbnail: ../assets/blog/ninja-peacock.jpg
 category: Washing Machines
 ---

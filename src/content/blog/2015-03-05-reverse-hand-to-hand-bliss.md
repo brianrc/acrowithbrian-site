@@ -4,7 +4,7 @@ route: reverse-hand-to-hand-bliss
 date: 2015-03-05
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/reverse-hand-to-hand-bliss.jpg
+hero: /src/lib/assets/imgs/blog/reverse-hand-to-hand-bliss.jpg
 thumbnail: ../assets/blog/reverse-hand-to-hand-bliss-640x480.jpg
 category: Washing Machines
 ---

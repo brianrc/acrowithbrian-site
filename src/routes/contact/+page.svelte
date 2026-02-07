@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import contactHero from '$lib/assets/imgs/pages/contact-1920x.jpg?enhanced';
 </script>
 
 <svelte:head>
@@ -10,7 +11,7 @@
 	/>
 </svelte:head>
 
-<Hero title="Contact" image="/img/contact-1920x.jpg" />
+<Hero title="Contact" image={contactHero} />
 
 <section class="py-16 px-4">
 	<div class="max-w-2xl mx-auto">

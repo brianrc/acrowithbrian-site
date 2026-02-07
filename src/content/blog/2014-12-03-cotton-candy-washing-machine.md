@@ -4,7 +4,7 @@ route: cotton-candy-washing-machine
 date: 2014-12-03
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/cotton-candy-washing-machine.jpg
+hero: /src/lib/assets/imgs/blog/cotton-candy-washing-machine.jpg
 thumbnail: /blog/cotton-candy-washing-machine-640x480.jpg
 category: Washing Machines
 ---

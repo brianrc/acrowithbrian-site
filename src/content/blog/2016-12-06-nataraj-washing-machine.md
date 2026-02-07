@@ -4,7 +4,7 @@ route: nataraj-washing-machine
 date: 2016-12-06
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/nataraj-washing-machine.jpg
+hero: /src/lib/assets/imgs/blog/nataraj-washing-machine.jpg
 thumbnail: ../assets/blog/nataraj-washing-machine-640x480.jpg
 category: Washing Machines
 ---

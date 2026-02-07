@@ -2,7 +2,7 @@
 title: Brian in Thailand
 date: 2019-12-03
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Trip
 teaching: false
 start: December 3, 2019 8:00 AM

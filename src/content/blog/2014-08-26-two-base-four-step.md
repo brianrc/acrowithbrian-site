@@ -4,7 +4,7 @@ route: two-base-four-step
 date: 2014-08-26
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/two-base-four-step.jpg
+hero: /src/lib/assets/imgs/blog/two-base-four-step.jpg
 thumbnail: /img/blog/two-base-four-step-640x480.jpg
 category: Washing Machines
 ---

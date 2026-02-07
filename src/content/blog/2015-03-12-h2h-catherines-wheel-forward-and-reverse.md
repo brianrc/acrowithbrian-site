@@ -4,7 +4,7 @@ route: h2h-catherines-wheel-forward-and-reverse
 date: 2015-03-12
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/h2h-catherines-wheel-forward-and-reverse.jpg
+hero: /src/lib/assets/imgs/blog/h2h-catherines-wheel-forward-and-reverse.jpg
 thumbnail: ../assets/blog/h2h-catherines-wheel-forward-and-reverse-640x480.jpg
 category: Washing Machines
 ---

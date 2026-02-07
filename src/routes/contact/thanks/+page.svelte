@@ -6,7 +6,7 @@
 	<title>Thank You | Brian Cruikshank Acro</title>
 </svelte:head>
 
-<Hero title="Thank You" image="/img/contact-1920x.jpg" />
+<Hero title="Thank You" image="/src/lib/assets/imgs/pages/contact-1920x.jpg" />
 
 <section class="py-16 px-4">
 	<div class="max-w-2xl mx-auto text-center">

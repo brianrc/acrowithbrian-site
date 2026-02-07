@@ -4,6 +4,7 @@ interface HomepageMetadata {
     title: string;
     metaTitle?: string;
     hero?: string;
+    heroImage?: unknown;
     aboutPhoto?: string;
     photoHighlight?: string;
     aboutPhotoBig?: string;
@@ -12,6 +13,8 @@ interface HomepageMetadata {
 
 const page = import.meta.glob('/src/content/pages/index.md', { eager: true });
 const posts = import.meta.glob('/src/content/blog/*.md', { eager: true });
+
+import { lookupHeroImage } from '$lib/utils/hero-images';
 
 export function load() {
     const pageData = Object.values(page)[0] as {
@@ -35,9 +38,15 @@ export function load() {
         return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
     });
 
+    // Resolve hero image from frontmatter path
+    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
+
     return {
         content: pageData.default,
-        metadata: pageData.metadata,
+        metadata: {
+            ...pageData.metadata,
+            heroImage
+        },
         latestPosts: allPosts.slice(0, 6)
     };
 }

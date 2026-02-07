@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
 	import type { Post } from '$lib/types';
+	import type { Picture } from '$lib/types/picture';
 
 	let { data } = $props();
 	const posts = $derived(data.posts as Post[]);
@@ -11,7 +12,12 @@
 	<meta name="description" content="Acrobatic tutorials and videos by Brian Cruikshank" />
 </svelte:head>
 
-<Hero title={data.metadata.title} image={data.metadata.hero ?? '/img/blog-1920x.jpg'} />
+<Hero
+	title={data.metadata.title}
+	image={(data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/blog-1920x.jpg') as
+		| Picture
+		| string}
+/>
 
 <section class="py-16 px-4">
 	<div class="max-w-6xl mx-auto">

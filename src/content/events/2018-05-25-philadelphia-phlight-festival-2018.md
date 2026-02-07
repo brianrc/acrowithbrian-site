@@ -3,7 +3,7 @@ title: Philadelphia Phlight Festival 2018
 route: events/philadelphia-phlight-festival-2018
 date: 2018-05-25
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Festival
 teaching: false
 start: May 25, 2018 2:00 PM

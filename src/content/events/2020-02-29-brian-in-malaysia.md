@@ -2,7 +2,7 @@
 title: Brian in Malaysia
 date: 2020-02-29
 layout: Event
-hero: /img/events-1920x.jpg
+hero: /src/lib/assets/imgs/pages/events-1920x.jpg
 category: Trip
 teaching: false
 start: February 29, 2020 8:00 AM

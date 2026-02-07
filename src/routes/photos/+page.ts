@@ -3,6 +3,7 @@ import type { Picture } from '$lib/types/picture';
 interface PageMetadata {
     title: string;
     hero?: string;
+    heroImage?: unknown;
     path?: string;
     layout?: string;
 }
@@ -19,6 +20,8 @@ const galleryImages = import.meta.glob<{ default: Picture }>(
     }
 );
 
+import { lookupHeroImage } from '$lib/utils/hero-images';
+
 export function load() {
     const pageData = Object.values(page)[0] as {
         default: ConstructorOfATypedSvelteComponent;
@@ -29,9 +32,15 @@ export function load() {
     // Each module.default contains the optimized image data
     const images: Picture[] = Object.values(galleryImages).map((mod) => mod.default);
 
+    // Resolve hero image from frontmatter path
+    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
+
     return {
         content: pageData.default,
-        metadata: pageData.metadata,
+        metadata: {
+            ...pageData.metadata,
+            heroImage
+        },
         images
     };
 }

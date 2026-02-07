@@ -4,7 +4,7 @@ route: variation-on-fish-flop
 date: 2015-04-08
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/variation-on-fish-flop.jpg
+hero: /src/lib/assets/imgs/blog/variation-on-fish-flop.jpg
 thumbnail: ../assets/blog/variation-on-fish-flop-640x480.jpg
 category: Washing Machines
 ---

@@ -4,7 +4,7 @@ route: express-up-to-2-high-and-hand-to-hand
 date: 2015-08-23
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/express-up-1920x1080.jpg
+hero: /src/lib/assets/imgs/blog/express-up-1920x1080.jpg
 thumbnail: ../assets/blog/express-up-640x480.jpg
 category: Acro Flows
 ---

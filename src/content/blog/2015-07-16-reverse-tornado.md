@@ -4,7 +4,7 @@ route: reverse-tornado
 date: 2015-07-16
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/reverse-tornado.jpg
+hero: /src/lib/assets/imgs/blog/reverse-tornado.jpg
 thumbnail: ../assets/blog/reverse-tornado.jpg
 category: Washing Machines
 ---

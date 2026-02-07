@@ -3,7 +3,7 @@ title: Lux's Spotting Tour DC
 route: events/lux-spotting-tour-dc
 date: 2017-06-19
 layout: Event
-hero: /img/events/lux-spotting-tour-dc.jpg
+hero: /src/lib/assets/imgs/pages/events/lux-spotting-tour-dc.jpg
 category: Workshop
 teaching: false
 start: June 19, 2017 6:00 PM

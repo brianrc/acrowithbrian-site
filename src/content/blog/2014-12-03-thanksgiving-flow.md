@@ -4,7 +4,7 @@ route: thanksgiving-flow
 date: 2014-12-03
 layout: blog-post
 author: Brian Cruikshank
-hero: /img/blog/thanksgiving-flow.jpg
+hero: /src/lib/assets/imgs/blog/thanksgiving-flow.jpg
 thumbnail: ../assets/blog/thanksgiving-flow-640x480.jpg
 category: Acro Flows
 ---

@@ -1,4 +1,5 @@
 import type { Event } from '$lib/types';
+import { lookupHeroImage } from '$lib/utils/hero-images';
 
 const events = import.meta.glob('/src/content/events/*.md', { eager: true });
 
@@ -10,8 +11,14 @@ export function load({ params }) {
         throw new Error(`Event not found: ${params.slug}`);
     }
 
+    // Resolve hero image - returns Picture if found, falls back to string path
+    const heroImage = lookupHeroImage(event.metadata.hero) ?? event.metadata.hero;
+
     return {
         content: event.default,
-        metadata: event.metadata
+        metadata: {
+            ...event.metadata,
+            heroImage
+        }
     };
 }

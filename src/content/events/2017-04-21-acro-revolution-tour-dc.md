@@ -3,7 +3,7 @@ title: Acro Revolution Tour - DC
 route: events/2017-04-21-acro-revolution-tour-dc
 date: 2017-04-21
 layout: Event
-hero: /img/events/2017-04-21-acro-revolution-tour-dc.jpg
+hero: /src/lib/assets/imgs/pages/events/2017-04-21-acro-revolution-tour-dc.jpg
 category: Workshop
 teaching: false
 start: April 21, 2017

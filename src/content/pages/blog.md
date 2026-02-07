@@ -2,5 +2,5 @@
 layout: blog-index
 path: /blog
 title: Blog
-hero: /img/blog-1920x.jpg
+hero: /src/lib/assets/imgs/pages/blog-1920x.jpg
 ---
