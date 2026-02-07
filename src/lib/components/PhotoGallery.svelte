@@ -1,6 +1,8 @@
 <script lang="ts">
+	import type { Picture } from '$lib/types/picture';
+
 	interface Props {
-		images: string[];
+		images: Picture[];
 	}
 
 	let { images }: Props = $props();
@@ -14,15 +16,15 @@
 
 	// Distribute images into columns
 	let columns = $derived.by(() => {
-		const result: string[][] = Array.from({ length: cols }, () => []);
+		const result: Picture[][] = Array.from({ length: cols }, () => []);
 		images.forEach((img, i) => {
 			result[i % cols].push(img);
 		});
 		return result;
 	});
 
-	function openLightbox(imageSrc: string) {
-		currentIndex = images.indexOf(imageSrc);
+	function openLightbox(imageIndex: number) {
+		currentIndex = imageIndex;
 		lightboxOpen = true;
 	}
 
@@ -50,25 +52,44 @@
 	function stopProp(e: MouseEvent) {
 		e.stopPropagation();
 	}
+
+	// Get original index in the full images array
+	function getGlobalIndex(colIndex: number, rowIndex: number): number {
+		return rowIndex * cols + colIndex;
+	}
 </script>
 
 <svelte:window onkeydown={handleKeydown} bind:innerWidth />
 
 <div class="flex gap-4">
-	{#each columns as column, i (i)}
+	{#each columns as column, colIndex (colIndex)}
 		<div class="flex-1 flex flex-col gap-4">
-			{#each column as image (image)}
+			{#each column as image, rowIndex (rowIndex)}
+				{@const globalIndex = getGlobalIndex(colIndex, rowIndex)}
 				<button
 					type="button"
 					class="w-full overflow-hidden cursor-pointer rounded-lg"
-					onclick={() => openLightbox(image)}
+					onclick={() => openLightbox(globalIndex)}
+					aria-label="View gallery image {globalIndex + 1}"
 				>
-					<img
-						src={image}
-						alt="Gallery item {images.indexOf(image) + 1}"
-						class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
-						loading="lazy"
-					/>
+					<!-- Render the optimized picture element manually -->
+					<picture>
+						{#each Object.entries(image.sources) as [format, srcset]}
+							<source
+								{srcset}
+								type="image/{format}"
+								sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+							/>
+						{/each}
+						<img
+							src={image.img.src}
+							width={image.img.w}
+							height={image.img.h}
+							alt="Gallery item {globalIndex + 1}"
+							class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
+							loading="lazy"
+						/>
+					</picture>
 				</button>
 			{/each}
 		</div>
@@ -102,12 +123,16 @@
 
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<img
-			src={images[currentIndex]}
-			alt="Gallery photo {currentIndex + 1}"
-			class="max-h-[85vh] max-w-full object-contain shadow-2xl"
-			onclick={stopProp}
-		/>
+		<picture onclick={stopProp}>
+			{#each Object.entries(images[currentIndex].sources) as [format, srcset]}
+				<source {srcset} type="image/{format}" />
+			{/each}
+			<img
+				src={images[currentIndex].img.src}
+				alt="Gallery photo {currentIndex + 1}"
+				class="max-h-[85vh] max-w-full object-contain shadow-2xl"
+			/>
+		</picture>
 
 		<button
 			type="button"
