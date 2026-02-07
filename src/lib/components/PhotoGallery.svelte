@@ -8,8 +8,21 @@
 	let lightboxOpen = $state(false);
 	let currentIndex = $state(0);
 
-	function openLightbox(index: number) {
-		currentIndex = index;
+	// Adaptive column count
+	let innerWidth = $state(0);
+	let cols = $derived(innerWidth < 640 ? 1 : innerWidth < 1024 ? 2 : 3);
+
+	// Distribute images into columns
+	let columns = $derived.by(() => {
+		const result: string[][] = Array.from({ length: cols }, () => []);
+		images.forEach((img, i) => {
+			result[i % cols].push(img);
+		});
+		return result;
+	});
+
+	function openLightbox(imageSrc: string) {
+		currentIndex = images.indexOf(imageSrc);
 		lightboxOpen = true;
 	}
 
@@ -39,22 +52,26 @@
 	}
 </script>
 
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} bind:innerWidth />
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-	{#each images as image, i (image)}
-		<button
-			type="button"
-			class="aspect-square overflow-hidden cursor-pointer"
-			onclick={() => openLightbox(i)}
-		>
-			<img
-				src={image}
-				alt="Gallery photo {i + 1}"
-				class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-				loading="lazy"
-			/>
-		</button>
+<div class="flex gap-4">
+	{#each columns as column, i (i)}
+		<div class="flex-1 flex flex-col gap-4">
+			{#each column as image (image)}
+				<button
+					type="button"
+					class="w-full overflow-hidden cursor-pointer rounded-lg"
+					onclick={() => openLightbox(image)}
+				>
+					<img
+						src={image}
+						alt="Gallery item {images.indexOf(image) + 1}"
+						class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
+						loading="lazy"
+					/>
+				</button>
+			{/each}
+		</div>
 	{/each}
 </div>
 
@@ -62,13 +79,14 @@
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
-		class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+		class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
 		onclick={closeLightbox}
 	>
 		<button
 			type="button"
 			class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 cursor-pointer z-10"
 			onclick={closeLightbox}
+			aria-label="Close lightbox"
 		>
 			&times;
 		</button>
@@ -77,6 +95,7 @@
 			type="button"
 			class="absolute left-4 text-white text-4xl hover:text-gray-300 cursor-pointer z-10"
 			onclick={prevImage}
+			aria-label="Previous image"
 		>
 			&#8249;
 		</button>
@@ -86,7 +105,7 @@
 		<img
 			src={images[currentIndex]}
 			alt="Gallery photo {currentIndex + 1}"
-			class="max-h-[90vh] max-w-[90vw] object-contain"
+			class="max-h-[85vh] max-w-full object-contain shadow-2xl"
 			onclick={stopProp}
 		/>
 
@@ -94,11 +113,12 @@
 			type="button"
 			class="absolute right-4 text-white text-4xl hover:text-gray-300 cursor-pointer z-10"
 			onclick={nextImage}
+			aria-label="Next image"
 		>
 			&#8250;
 		</button>
 
-		<div class="absolute bottom-4 text-white text-sm">
+		<div class="absolute bottom-4 text-white text-sm bg-black/50 px-3 py-1 rounded-full">
 			{currentIndex + 1} / {images.length}
 		</div>
 	</div>
