@@ -26,6 +26,10 @@
    BASE STYLES
    ============================================ */
 
+.prose {
+	overflow-wrap: anywhere;
+}
+
 html {
 	font-size: 18px;
 	scroll-behavior: smooth;
