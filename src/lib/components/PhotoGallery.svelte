@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Picture from './Picture.svelte';
+
 	interface Props {
 		images: string[];
 	}
@@ -70,11 +72,11 @@
 					onclick={() => openLightbox(globalIndex)}
 					aria-label="View gallery image {globalIndex + 1}"
 				>
-					<img
+					<Picture
 						src={image}
 						alt="Gallery item {globalIndex + 1}"
 						class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
-						loading="lazy"
+						variant="preview"
 					/>
 				</button>
 			{/each}
@@ -110,11 +112,10 @@
 
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<img
+		<Picture
 			src={currentImage}
 			alt="Gallery photo {currentIndex + 1}"
 			class="max-h-[85vh] max-w-full object-contain shadow-2xl"
-			onclick={stopProp}
 		/>
 
 		<button

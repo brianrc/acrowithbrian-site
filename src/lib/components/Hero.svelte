@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Picture from './Picture.svelte';
+
 	interface Props {
 		title?: string;
 		subtitle?: string;
@@ -24,13 +26,7 @@
 >
 	<!-- Hero Background Image -->
 	<div class="absolute inset-0 z-0">
-		<img
-			src={image}
-			alt=""
-			class="w-full h-full object-cover"
-			style:object-position={imagePosition}
-			fetchpriority="high"
-		/>
+		<Picture src={image} alt="" class="w-full h-full object-cover" loading="eager" />
 		<!-- Dark Overlay -->
 		<div class="absolute inset-0 bg-black/20"></div>
 		<!-- Gradient Overlay -->

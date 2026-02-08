@@ -1,8 +1,16 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import Picture from '$lib/components/Picture.svelte';
 	import LatestPosts from '$lib/components/LatestPosts.svelte';
 
 	let { data } = $props();
+
+	// Helper to get AVIF path for CSS backgrounds
+	const photoHighlightAvif = $derived(
+		(data.metadata.photoHighlight ?? '/imgs/pages/photo-highlight-1920x.jpg')
+			.replace('/imgs/', '/imgs-optimized/')
+			.replace(/\.(jpg|jpeg|png|webp)$/i, '.avif')
+	);
 </script>
 
 <svelte:head>
@@ -23,8 +31,8 @@
 	<div class="max-w-6xl mx-auto">
 		<div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
 			<div class="w-full md:w-1/2 max-w-[400px] mx-auto">
-				<img
-					src={data.metadata.aboutPhoto}
+				<Picture
+					src={data.metadata.aboutPhoto ?? '/imgs/pages/brian-640x.jpg'}
 					alt="Brian Cruikshank"
 					class="w-full rounded-lg shadow-lg"
 				/>
@@ -49,8 +57,7 @@
 <section class="py-0">
 	<div
 		class="h-[70vh] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
-		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('{data
-			.metadata.photoHighlight}'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
+		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('{photoHighlightAvif}'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
 	>
 		<a
 			href="/photos"

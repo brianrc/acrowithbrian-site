@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import Picture from '$lib/components/Picture.svelte';
 	import type { Post } from '$lib/types';
 
 	let { data } = $props();
@@ -29,11 +30,11 @@
 						class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
 					>
 						{#if post.metadata.hero}
-							<img
+							<Picture
 								src={post.metadata.hero}
 								alt={post.metadata.title}
 								class="w-full h-48 object-cover"
-								loading="lazy"
+								variant="thumb"
 							/>
 						{/if}
 						<div class="p-4">

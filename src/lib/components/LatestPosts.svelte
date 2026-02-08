@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Picture from './Picture.svelte';
 	import type { Post } from '$lib/types';
 
 	interface Props {
@@ -16,11 +17,11 @@
 		>
 			{#if post.metadata.hero}
 				<figure class="aspect-video">
-					<img
+					<Picture
 						src={post.metadata.hero}
 						alt={post.metadata.title}
 						class="w-full h-full object-cover"
-						loading="lazy"
+						variant="thumb"
 					/>
 				</figure>
 			{/if}
