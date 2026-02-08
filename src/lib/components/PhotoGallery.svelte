@@ -2,7 +2,7 @@
 	import type { Picture } from '$lib/types/picture';
 
 	interface Props {
-		images: Picture[];
+		images: (Picture | string)[];
 	}
 
 	let { images }: Props = $props();
@@ -14,9 +14,19 @@
 	let innerWidth = $state(0);
 	let cols = $derived(innerWidth < 640 ? 1 : innerWidth < 1024 ? 2 : 3);
 
+	// Helper to check if image is a Picture object (production) or string URL (dev)
+	function isPicture(img: Picture | string): img is Picture {
+		return typeof img === 'object' && img !== null && 'sources' in img;
+	}
+
+	// Get image src for both types
+	function getImageSrc(img: Picture | string): string {
+		return isPicture(img) ? img.img.src : img;
+	}
+
 	// Distribute images into columns
 	let columns = $derived.by(() => {
-		const result: Picture[][] = Array.from({ length: cols }, () => []);
+		const result: (Picture | string)[][] = Array.from({ length: cols }, () => []);
 		images.forEach((img, i) => {
 			result[i % cols].push(img);
 		});
@@ -72,24 +82,34 @@
 					onclick={() => openLightbox(globalIndex)}
 					aria-label="View gallery image {globalIndex + 1}"
 				>
-					<!-- Render the optimized picture element manually -->
-					<picture>
-						{#each Object.entries(image.sources) as [format, srcset]}
-							<source
-								{srcset}
-								type="image/{format}"
-								sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+					{#if isPicture(image)}
+						<!-- Production: Render optimized picture element -->
+						<picture>
+							{#each Object.entries(image.sources) as [format, srcset]}
+								<source
+									{srcset}
+									type="image/{format}"
+									sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+								/>
+							{/each}
+							<img
+								src={image.img.src}
+								width={image.img.w}
+								height={image.img.h}
+								alt="Gallery item {globalIndex + 1}"
+								class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
+								loading="lazy"
 							/>
-						{/each}
+						</picture>
+					{:else}
+						<!-- Dev: Simple img tag -->
 						<img
-							src={image.img.src}
-							width={image.img.w}
-							height={image.img.h}
+							src={image}
 							alt="Gallery item {globalIndex + 1}"
 							class="w-full h-auto block hover:scale-[1.02] transition-transform duration-300"
 							loading="lazy"
 						/>
-					</picture>
+					{/if}
 				</button>
 			{/each}
 		</div>
@@ -97,6 +117,7 @@
 </div>
 
 {#if lightboxOpen}
+	{@const currentImage = images[currentIndex]}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
@@ -123,16 +144,25 @@
 
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<picture onclick={stopProp}>
-			{#each Object.entries(images[currentIndex].sources) as [format, srcset]}
-				<source {srcset} type="image/{format}" />
-			{/each}
+		{#if isPicture(currentImage)}
+			<picture onclick={stopProp}>
+				{#each Object.entries(currentImage.sources) as [format, srcset]}
+					<source {srcset} type="image/{format}" />
+				{/each}
+				<img
+					src={currentImage.img.src}
+					alt="Gallery photo {currentIndex + 1}"
+					class="max-h-[85vh] max-w-full object-contain shadow-2xl"
+				/>
+			</picture>
+		{:else}
 			<img
-				src={images[currentIndex].img.src}
+				src={currentImage}
 				alt="Gallery photo {currentIndex + 1}"
 				class="max-h-[85vh] max-w-full object-contain shadow-2xl"
+				onclick={stopProp}
 			/>
-		</picture>
+		{/if}
 
 		<button
 			type="button"

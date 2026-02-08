@@ -8,17 +8,22 @@ interface PageMetadata {
     layout?: string;
 }
 
+const isDev = import.meta.env.DEV;
+
 // Import page metadata
 const page = import.meta.glob('/src/content/pages/photos.md', { eager: true });
 
-// Automatically discover all images in the gallery folder with enhanced optimization
-const galleryImages = import.meta.glob<{ default: Picture }>(
-    '/src/lib/assets/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
-    {
-        eager: true,
-        query: { enhanced: true }
-    }
-);
+// In dev mode: skip enhancement for fast loading
+// In production: use enhanced images with responsive sizes
+const galleryImages = isDev
+    ? import.meta.glob<{ default: string }>(
+        '/src/lib/assets/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
+        { eager: true, query: '?url' }
+    )
+    : import.meta.glob<{ default: Picture }>(
+        '/src/lib/assets/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
+        { eager: true, query: { enhanced: true } }
+    );
 
 import { lookupHeroImage } from '$lib/utils/hero-images';
 
@@ -28,9 +33,9 @@ export function load() {
         metadata: PageMetadata;
     };
 
-    // Extract the enhanced image objects from the glob result
-    // Each module.default contains the optimized image data
-    const images: Picture[] = Object.values(galleryImages).map((mod) => mod.default);
+    // Extract the image data from the glob result
+    // In dev: just URLs, in prod: optimized Picture objects
+    const images = Object.values(galleryImages).map((mod) => mod.default);
 
     // Resolve hero image from frontmatter path
     const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
