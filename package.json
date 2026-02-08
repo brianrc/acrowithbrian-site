@@ -29,6 +29,7 @@
 		"eslint-plugin-svelte": "^3.14.0",
 		"globals": "^17.3.0",
 		"mdsvex": "^0.12.6",
+		"netlify-plugin-cache": "^1.0.3",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.4.1",
 		"svelte": "^5.49.2",
