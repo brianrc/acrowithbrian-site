@@ -5,7 +5,6 @@ date: 2015-05-12
 layout: blog-post
 author: Brian Cruikshank
 hero: /src/lib/assets/imgs/blog/yoga-on-the-mall.jpg
-thumbnail: ../assets/blog/yoga-on-the-mall-640x480.jpg
 category: Acro Performance
 ---
 

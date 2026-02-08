@@ -5,7 +5,6 @@ date: 2015-08-23
 layout: blog-post
 author: Brian Cruikshank
 hero: /src/lib/assets/imgs/blog/express-up-1920x1080.jpg
-thumbnail: ../assets/blog/express-up-640x480.jpg
 category: Acro Flows
 ---
 

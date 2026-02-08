@@ -5,7 +5,6 @@ date: 2014-08-26
 layout: blog-post
 author: Brian Cruikshank
 hero: /src/lib/assets/imgs/blog/acroyoga-playtime-batman-and-back-plank-london-spin.jpg
-thumbnail: /img/blog/acroyoga-playtime-batman-and-back-plank-london-spin-640x480.jpg
 tags: 
   - Acro Flows
 ---
