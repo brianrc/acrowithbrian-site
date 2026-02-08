@@ -2,11 +2,12 @@
  * Image Optimization Script
  * Generates AVIF versions and thumbnails for all site images.
  * Uses manifest for incremental processing - only processes new/changed files.
+ * Cross-platform compatible (Windows + Linux/Netlify).
  * Run: pnpm run images
  */
 
 import sharp from 'sharp';
-import { readdir, readFile, writeFile, mkdir, unlink, stat } from 'fs/promises';
+import { readdir, readFile, writeFile, mkdir, unlink, access } from 'fs/promises';
 import { createHash } from 'crypto';
 import { join, basename, extname, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
@@ -39,11 +40,30 @@ const SUPPORTED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
 const AVIF_QUALITY = 80;
 
 /**
+ * Normalize path to use forward slashes (cross-platform)
+ */
+function normalizePath(p) {
+    return p.replace(/\\/g, '/');
+}
+
+/**
  * Calculate file hash for change detection
  */
 async function getFileHash(filePath) {
     const content = await readFile(filePath);
     return createHash('md5').update(content).digest('hex');
+}
+
+/**
+ * Check if file exists
+ */
+async function fileExists(filePath) {
+    try {
+        await access(filePath);
+        return true;
+    } catch {
+        return false;
+    }
 }
 
 /**
@@ -86,6 +106,7 @@ async function ensureDir(dir) {
 
 /**
  * Process a single image
+ * Returns array of relative output paths (normalized with forward slashes)
  */
 async function processImage(sourcePath, category, config) {
     const name = basename(sourcePath, extname(sourcePath));
@@ -98,7 +119,8 @@ async function processImage(sourcePath, category, config) {
     if (config.full) {
         const fullPath = join(outputSubDir, `${name}.avif`);
         await sharp(sourcePath).avif({ quality: AVIF_QUALITY }).toFile(fullPath);
-        outputs.push(fullPath);
+        // Store relative path with forward slashes
+        outputs.push(normalizePath(relative(ROOT, fullPath)));
     }
 
     // Thumbnail if configured
@@ -108,10 +130,24 @@ async function processImage(sourcePath, category, config) {
             .resize(config.thumbnail.width, null, { withoutEnlargement: true })
             .avif({ quality: AVIF_QUALITY })
             .toFile(thumbPath);
-        outputs.push(thumbPath);
+        // Store relative path with forward slashes
+        outputs.push(normalizePath(relative(ROOT, thumbPath)));
     }
 
     return outputs;
+}
+
+/**
+ * Check if all output files exist (handles cross-platform path differences)
+ */
+async function outputsExist(outputs) {
+    for (const relOutput of outputs) {
+        const absPath = join(ROOT, relOutput);
+        if (!(await fileExists(absPath))) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**
@@ -124,10 +160,11 @@ async function cleanupOrphans(manifest, currentSources) {
     for (const key of orphanKeys) {
         const entry = manifest[key];
         if (entry.outputs) {
-            for (const outputPath of entry.outputs) {
+            for (const relOutput of entry.outputs) {
                 try {
-                    await unlink(outputPath);
-                    console.log(`🗑️  Deleted orphan: ${relative(ROOT, outputPath)}`);
+                    const absPath = join(ROOT, relOutput);
+                    await unlink(absPath);
+                    console.log(`🗑️  Deleted orphan: ${relOutput}`);
                 } catch {
                     // File may already be deleted
                 }
@@ -156,13 +193,15 @@ async function main() {
 
         for (const image of images) {
             const sourcePath = join(categoryDir, image);
-            const relPath = relative(ROOT, sourcePath);
+            // Use normalized forward-slash paths as manifest keys
+            const relPath = normalizePath(relative(ROOT, sourcePath));
             allSources.push(relPath);
 
             const hash = await getFileHash(sourcePath);
             const existing = manifest[relPath];
 
-            if (existing && existing.hash === hash) {
+            // Skip if hash matches AND all output files exist
+            if (existing && existing.hash === hash && (await outputsExist(existing.outputs || []))) {
                 skipped++;
                 continue;
             }
