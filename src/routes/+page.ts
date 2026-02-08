@@ -28,15 +28,14 @@ export function load() {
         const post = posts[path] as { metadata: Post['metadata'] };
         const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
-        // Resolve hero image for thumbnails
-        const heroResolved = lookupHeroImage(post.metadata.hero);
-        const hero = heroResolved?.img.src ?? post.metadata.hero;
+        // Resolve hero image for thumbnails - pass full Picture object for responsive sizing
+        const heroPicture = lookupHeroImage(post.metadata.hero);
 
         allPosts.push({
             slug,
             metadata: {
                 ...post.metadata,
-                hero
+                heroPicture
             }
         });
     }

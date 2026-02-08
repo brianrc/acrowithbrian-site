@@ -8,6 +8,7 @@ export interface Post {
         author?: string;
         hero?: string;
         heroImage?: Picture | string;
+        heroPicture?: Picture | null;
         category?: string;
         description?: string;
     };
