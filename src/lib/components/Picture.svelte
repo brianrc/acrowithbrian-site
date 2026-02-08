@@ -17,9 +17,10 @@
 		variant?: 'thumb' | 'preview';
 		class?: string;
 		loading?: 'lazy' | 'eager';
+		style?: string;
 	}
 
-	let { src, alt, variant, class: className = '', loading = 'lazy' }: Props = $props();
+	let { src, alt, variant, class: className = '', loading = 'lazy', style = '' }: Props = $props();
 
 	/**
 	 * Convert original path to optimized AVIF path
@@ -52,5 +53,5 @@
 
 <picture>
 	<source srcset={avifSrc} type="image/avif" />
-	<img {src} {alt} class={className} {loading} />
+	<img {src} {alt} class={className} {loading} {style} />
 </picture>

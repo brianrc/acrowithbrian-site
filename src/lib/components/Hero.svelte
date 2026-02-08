@@ -26,7 +26,13 @@
 >
 	<!-- Hero Background Image -->
 	<div class="absolute inset-0 z-0">
-		<Picture src={image} alt="" class="w-full h-full object-cover" loading="eager" />
+		<Picture
+			src={image}
+			alt=""
+			class="w-full h-full object-cover"
+			loading="eager"
+			style="object-position: {imagePosition}"
+		/>
 		<!-- Dark Overlay -->
 		<div class="absolute inset-0 bg-black/20"></div>
 		<!-- Gradient Overlay -->
