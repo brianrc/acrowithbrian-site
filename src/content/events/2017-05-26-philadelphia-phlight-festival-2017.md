@@ -3,7 +3,7 @@ title: Philadelphia Phlight Festival 2017 ACROPOP!
 route: events/philadelphia-phlight-festival-2017
 date: 2017-05-26
 layout: Event
-hero: /src/lib/assets/imgs/pages/events/philadelphia-phlight-festival-2017.jpg
+hero: /imgs/events/philadelphia-phlight-festival-2017.jpg
 category: Festival
 teaching: false
 start: May 26, 2017

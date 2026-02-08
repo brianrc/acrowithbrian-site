@@ -2,7 +2,7 @@
 title: Interfusion Festival - Rebirth
 date: 2019-01-18
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Festival
 teaching: true
 start: January 18, 2019

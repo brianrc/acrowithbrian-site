@@ -3,7 +3,7 @@ title: DC Acrobatics Convention
 route: events/dc-acrobatics-convention-2018
 date: 2018-10-12
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Festival
 teaching: true
 start: October 12, 2018 5:00 PM

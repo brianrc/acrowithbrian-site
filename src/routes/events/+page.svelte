@@ -2,7 +2,6 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import EventCalendar from '$lib/components/EventCalendar.svelte';
 	import type { Event } from '$lib/types';
-	import type { Picture } from '$lib/types/picture';
 
 	let { data } = $props();
 	const allEvents = $derived([...data.upcoming, ...data.past] as Event[]);
@@ -15,9 +14,7 @@
 
 <Hero
 	title={data.metadata.title}
-	image={(data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/events-1920x.jpg') as
-		| Picture
-		| string}
+	image={data.metadata.heroImage ?? '/imgs/pages/events-1920x.jpg'}
 />
 
 <section class="py-16 px-4">

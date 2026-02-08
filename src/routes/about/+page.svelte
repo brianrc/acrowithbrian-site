@@ -14,7 +14,7 @@
 
 <Hero
 	title={data.metadata.title}
-	image={data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/about-1920x.jpg'}
+	image={data.metadata.heroImage ?? '/imgs/pages/about-1920x.jpg'}
 />
 
 <section class="py-16 px-4">

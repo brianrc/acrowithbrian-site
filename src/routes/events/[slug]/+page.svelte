@@ -31,7 +31,7 @@
 <Hero
 	title={data.metadata.title}
 	subtitle={data.metadata.start}
-	image={data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/events-1920x.jpg'}
+	image={data.metadata.heroImage ?? '/imgs/pages/events-1920x.jpg'}
 />
 
 <article class="py-16 px-4">

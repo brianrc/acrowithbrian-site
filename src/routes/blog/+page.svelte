@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
 	import type { Post } from '$lib/types';
-	import type { Picture } from '$lib/types/picture';
 
 	let { data } = $props();
 	const posts = $derived(data.posts as Post[]);
@@ -12,12 +11,7 @@
 	<meta name="description" content="Acrobatic tutorials and videos by Brian Cruikshank" />
 </svelte:head>
 
-<Hero
-	title={data.metadata.title}
-	image={(data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/blog-1920x.jpg') as
-		| Picture
-		| string}
-/>
+<Hero title={data.metadata.title} image={data.metadata.heroImage ?? '/imgs/pages/blog-1920x.jpg'} />
 
 <section class="py-16 px-4">
 	<div class="max-w-6xl mx-auto">
@@ -34,19 +28,7 @@
 						href="/blog/{post.slug}"
 						class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
 					>
-						{#if post.metadata.heroPicture}
-							<picture>
-								{#each Object.entries(post.metadata.heroPicture.sources) as [type, srcset] (type)}
-									<source {srcset} {type} />
-								{/each}
-								<img
-									src={post.metadata.heroPicture.img.src}
-									alt={post.metadata.title}
-									class="w-full h-48 object-cover"
-									loading="lazy"
-								/>
-							</picture>
-						{:else if post.metadata.hero}
+						{#if post.metadata.hero}
 							<img
 								src={post.metadata.hero}
 								alt={post.metadata.title}

@@ -1,10 +1,8 @@
 import type { Post } from '$lib/types';
-import { lookupHeroImage } from '$lib/utils/hero-images';
 
 interface PageMetadata {
     title: string;
     hero?: string;
-    heroImage?: unknown;
     path?: string;
     layout?: string;
 }
@@ -18,24 +16,15 @@ export function load() {
         metadata: PageMetadata
     };
 
-    // Resolve hero image from frontmatter path
-    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
-
     const allPosts: Post[] = [];
 
     for (const path in posts) {
         const post = posts[path] as { metadata: Post['metadata'] };
         const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
-        // Resolve hero image for thumbnails - pass full Picture object for responsive sizing
-        const heroPicture = lookupHeroImage(post.metadata.hero);
-
         allPosts.push({
             slug,
-            metadata: {
-                ...post.metadata,
-                heroPicture
-            }
+            metadata: post.metadata
         });
     }
 
@@ -47,7 +36,7 @@ export function load() {
         content: pageData.default,
         metadata: {
             ...pageData.metadata,
-            heroImage
+            heroImage: pageData.metadata.hero
         },
         posts: allPosts
     };

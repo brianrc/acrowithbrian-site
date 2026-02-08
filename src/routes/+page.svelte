@@ -13,7 +13,7 @@
 <!-- Hero Section -->
 <Hero
 	title={data.metadata.title}
-	image={data.metadata.heroImage ?? '/src/lib/assets/imgs/pages/home-1920x.jpg'}
+	image={data.metadata.heroImage ?? '/imgs/pages/home-1920x.jpg'}
 	imagePosition="50% 30%"
 	variant="homepage"
 />

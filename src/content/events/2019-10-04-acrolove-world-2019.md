@@ -2,7 +2,7 @@
 title: AcroLove World
 date: 2019-01-18
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Festival
 teaching: true
 start: October 4, 2019 9:00 AM

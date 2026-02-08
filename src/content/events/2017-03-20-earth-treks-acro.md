@@ -3,7 +3,7 @@ title: Acro Class at Earth Treks
 route: events/earth-treks-acro-6
 date: 2017-03-20
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Class
 teaching: true
 start: March 20, 2017 8:30 PM

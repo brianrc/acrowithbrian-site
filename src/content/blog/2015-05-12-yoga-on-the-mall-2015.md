@@ -4,7 +4,7 @@ route: yoga-on-the-mall-2015
 date: 2015-05-12
 layout: blog-post
 author: Brian Cruikshank
-hero: /src/lib/assets/imgs/blog/yoga-on-the-mall.jpg
+hero: /imgs/blog/yoga-on-the-mall.jpg
 category: Acro Performance
 ---
 

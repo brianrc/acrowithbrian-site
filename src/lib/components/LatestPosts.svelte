@@ -14,21 +14,7 @@
 			href="/blog/{post.slug}"
 			class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
 		>
-			{#if post.metadata.heroPicture}
-				<figure class="aspect-video">
-					<picture>
-						{#each Object.entries(post.metadata.heroPicture.sources) as [type, srcset] (type)}
-							<source {srcset} {type} />
-						{/each}
-						<img
-							src={post.metadata.heroPicture.img.src}
-							alt={post.metadata.title}
-							class="w-full h-full object-cover"
-							loading="lazy"
-						/>
-					</picture>
-				</figure>
-			{:else if post.metadata.hero}
+			{#if post.metadata.hero}
 				<figure class="aspect-video">
 					<img
 						src={post.metadata.hero}

@@ -2,7 +2,7 @@
 layout: events-index
 path: /events
 title: Events
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 ---
 <p style="text-align: center;">You can find me at the following events. Events I'm teaching are in <strong><span style="color: green">green</span></strong>.</p>
 

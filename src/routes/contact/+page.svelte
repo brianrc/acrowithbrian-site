@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
-	import contactHero from '$lib/assets/imgs/pages/contact-1920x.jpg?enhanced';
+
+	let { data } = $props();
 
 	let formState: 'idle' | 'submitting' | 'success' | 'error' = $state('idle');
 	let errorMessage = $state('');
@@ -33,21 +34,23 @@
 </script>
 
 <svelte:head>
-	<title>Contact | Brian Cruikshank Acro</title>
+	<title>{data.metadata.title} | Brian Cruikshank Acro</title>
 	<meta
 		name="description"
 		content="Contact Brian Cruikshank for private acro lessons, classes, or photography"
 	/>
 </svelte:head>
 
-<Hero title="Contact" image={contactHero} />
+<Hero
+	title={data.metadata.title}
+	image={data.metadata.heroImage ?? '/imgs/pages/contact-1920x.jpg'}
+/>
 
 <section class="py-16 px-4">
 	<div class="max-w-2xl mx-auto">
-		<p class="text-lg text-muted mb-8 text-center">
-			To contact me about a private lesson, class, photo session, or anything else please email
-			<em class="font-medium">brian@acrowithbrian.com</em> or use the form below.
-		</p>
+		<div class="prose prose-lg mx-auto text-center mb-8">
+			<data.content />
+		</div>
 
 		{#if formState === 'success'}
 			<div class="text-center py-12">

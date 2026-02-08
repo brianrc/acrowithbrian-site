@@ -2,7 +2,7 @@
 title: Acro Class at Earth Treks
 date: 2019-05-06
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Class
 teaching: true
 start: May 6, 2019 8:30 PM

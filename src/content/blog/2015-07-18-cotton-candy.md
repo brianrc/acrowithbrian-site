@@ -4,7 +4,7 @@ route: cotton-candy
 date: 2015-07-18
 layout: blog-post
 author: Brian Cruikshank
-hero: /src/lib/assets/imgs/blog/cotton-candy.jpg
+hero: /imgs/blog/cotton-candy.jpg
 category: Washing Machines
 ---
 

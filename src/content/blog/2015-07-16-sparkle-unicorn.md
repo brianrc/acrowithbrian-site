@@ -4,7 +4,7 @@ route: sparkle-unicorn
 date: 2015-07-16
 layout: blog-post
 author: Brian Cruikshank
-hero: /src/lib/assets/imgs/blog/sparkle-unicorn.jpg
+hero: /imgs/blog/sparkle-unicorn.jpg
 category: Washing Machines
 ---
 

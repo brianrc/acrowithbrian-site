@@ -1,10 +1,8 @@
 import type { Event } from '$lib/types';
-import { lookupHeroImage } from '$lib/utils/hero-images';
 
 interface PageMetadata {
     title: string;
     hero?: string;
-    heroImage?: unknown;
     path?: string;
     layout?: string;
 }
@@ -17,9 +15,6 @@ export function load() {
         default: ConstructorOfATypedSvelteComponent;
         metadata: PageMetadata
     };
-
-    // Resolve hero image from frontmatter path
-    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
 
     const allEvents: Event[] = [];
     const now = new Date();
@@ -45,7 +40,7 @@ export function load() {
         content: pageData.default,
         metadata: {
             ...pageData.metadata,
-            heroImage
+            heroImage: pageData.metadata.hero
         },
         upcoming,
         past

@@ -1,31 +1,18 @@
-import type { Picture } from '$lib/types/picture';
-
 interface PageMetadata {
     title: string;
     hero?: string;
-    heroImage?: unknown;
     path?: string;
     layout?: string;
 }
 
-const isDev = import.meta.env.DEV;
-
 // Import page metadata
 const page = import.meta.glob('/src/content/pages/photos.md', { eager: true });
 
-// In dev mode: skip enhancement for fast loading
-// In production: use enhanced images with responsive sizes
-const galleryImages = isDev
-    ? import.meta.glob<{ default: string }>(
-        '/src/lib/assets/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
-        { eager: true, query: '?url' }
-    )
-    : import.meta.glob<{ default: Picture }>(
-        '/src/lib/assets/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
-        { eager: true, query: { enhanced: true } }
-    );
-
-import { lookupHeroImage } from '$lib/utils/hero-images';
+// Simple URL glob for gallery images from static folder
+const galleryImages = import.meta.glob<{ default: string }>(
+    '/static/imgs/photo-gallery/*.{jpg,jpeg,png,webp,gif}',
+    { eager: true, query: '?url' }
+);
 
 export function load() {
     const pageData = Object.values(page)[0] as {
@@ -33,18 +20,17 @@ export function load() {
         metadata: PageMetadata;
     };
 
-    // Extract the image data from the glob result
-    // In dev: just URLs, in prod: optimized Picture objects
-    const images = Object.values(galleryImages).map((mod) => mod.default);
-
-    // Resolve hero image from frontmatter path
-    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
+    // Extract image URLs - convert /static paths to root-relative paths
+    const images = Object.entries(galleryImages).map(([path, mod]) => {
+        // Convert '/static/imgs/photo-gallery/x.jpg' to '/imgs/photo-gallery/x.jpg'
+        return path.replace('/static', '');
+    });
 
     return {
         content: pageData.default,
         metadata: {
             ...pageData.metadata,
-            heroImage
+            heroImage: pageData.metadata.hero
         },
         images
     };

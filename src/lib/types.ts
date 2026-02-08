@@ -1,5 +1,3 @@
-import type { Picture } from './types/picture';
-
 export interface Post {
     slug: string;
     metadata: {
@@ -7,8 +5,6 @@ export interface Post {
         date: string;
         author?: string;
         hero?: string;
-        heroImage?: Picture | string;
-        heroPicture?: Picture | null;
         category?: string;
         description?: string;
     };
@@ -26,7 +22,6 @@ export interface Event {
         category?: string;
         description?: string;
         hero?: string;
-        heroImage?: Picture | string;
         teaching?: boolean;
     };
 }

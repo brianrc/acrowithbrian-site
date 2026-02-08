@@ -2,7 +2,7 @@
 title: Brian in Dana Point, CA
 date: 2021-10-12
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Trip
 teaching: false
 start: October 12, 2021 11:00 AM

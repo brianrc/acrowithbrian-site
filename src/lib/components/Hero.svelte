@@ -1,10 +1,8 @@
 <script lang="ts">
-	import type { Picture } from '$lib/types/picture';
-
 	interface Props {
 		title?: string;
 		subtitle?: string;
-		image?: Picture | string; // Accept both optimized (Picture) and unoptimized (string)
+		image?: string;
 		imagePosition?: string;
 		variant?: 'default' | 'homepage';
 	}
@@ -12,15 +10,12 @@
 	let {
 		title = '',
 		subtitle = '',
-		image = '/img/home-1920x.jpg',
+		image = '/imgs/pages/home-1920x.jpg',
 		imagePosition = '50% 50%',
 		variant = 'default'
 	}: Props = $props();
 
 	const isHomepage = $derived(variant === 'homepage');
-
-	// Helper to determine if we have an optimized picture object
-	const isOptimized = $derived(typeof image === 'object' && image !== null && 'sources' in image);
 </script>
 
 <section
@@ -29,28 +24,13 @@
 >
 	<!-- Hero Background Image -->
 	<div class="absolute inset-0 z-0">
-		{#if isOptimized}
-			{@const pic = image as Picture}
-			<picture>
-				{#each Object.entries(pic.sources) as [format, srcset]}
-					<source {srcset} type="image/{format}" sizes="100vw" />
-				{/each}
-				<img
-					src={pic.img.src}
-					alt=""
-					class="w-full h-full object-cover"
-					style:object-position={imagePosition}
-					fetchpriority="high"
-				/>
-			</picture>
-		{:else}
-			<img
-				src={image as string}
-				alt=""
-				class="w-full h-full object-cover"
-				style:object-position={imagePosition}
-			/>
-		{/if}
+		<img
+			src={image}
+			alt=""
+			class="w-full h-full object-cover"
+			style:object-position={imagePosition}
+			fetchpriority="high"
+		/>
 		<!-- Dark Overlay -->
 		<div class="absolute inset-0 bg-black/20"></div>
 		<!-- Gradient Overlay -->

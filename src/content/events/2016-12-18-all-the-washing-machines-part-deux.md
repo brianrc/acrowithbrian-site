@@ -3,7 +3,7 @@ title: ALL the Washing Machines Part Deux
 route: events/all-the-washing-machines-part-deux
 date: 2016-12-18
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Workshop
 teaching: true
 start: December 18, 2016 2:00 PM

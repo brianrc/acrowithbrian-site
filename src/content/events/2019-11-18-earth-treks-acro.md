@@ -2,7 +2,7 @@
 title: Acro Class at Earth Treks
 date: 2019-11-18
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Class
 teaching: true
 start: November 18, 2019 8:30 PM

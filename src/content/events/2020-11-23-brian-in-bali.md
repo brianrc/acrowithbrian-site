@@ -2,7 +2,7 @@
 title: Brian in Bali
 date: 2020-11-23
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Trip
 teaching: false
 start: November 23, 2020 12:00 PM

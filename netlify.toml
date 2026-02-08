@@ -3,14 +3,3 @@
 [build]
   command = "pnpm run build"
   publish = "build"
-
-# Cache directories to speed up subsequent builds
-# netlify-plugin-cache persists these between deployments
-[[plugins]]
-  package = "netlify-plugin-cache"
-
-  [plugins.inputs]
-    # Cache processed images from vite-imagetools (enhanced-img uses this)
-    paths = [
-      "node_modules/.cache"  # Contains imagetools processed images
-    ]

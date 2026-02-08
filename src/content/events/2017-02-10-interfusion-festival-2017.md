@@ -3,7 +3,7 @@ title: Interfusion Festival 2017
 route: events/interfusion-festival-2017
 date: 2017-02-10
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Festival
 teaching: true
 start: February 10, 2017

@@ -2,7 +2,7 @@
 title: Acro Yoga/Partner Yoga 101 Workshop
 date: 2019-04-07
 layout: Event
-hero: /src/lib/assets/imgs/pages/events-1920x.jpg
+hero: /imgs/pages/events-1920x.jpg
 category: Workshop
 teaching: true
 start: April 7, 2019 11:00 AM

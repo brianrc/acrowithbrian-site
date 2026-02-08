@@ -4,7 +4,7 @@ route: peacock-spin
 date: 2015-07-22
 layout: blog-post
 author: Brian Cruikshank
-hero: /src/lib/assets/imgs/blog/peacock-spin.jpg
+hero: /imgs/blog/peacock-spin.jpg
 category: Washing Machines
 ---
 
