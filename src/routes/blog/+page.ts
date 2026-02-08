@@ -1,4 +1,5 @@
 import type { Post } from '$lib/types';
+import { lookupHeroImage } from '$lib/utils/hero-images';
 
 interface PageMetadata {
     title: string;
@@ -17,15 +18,25 @@ export function load() {
         metadata: PageMetadata
     };
 
+    // Resolve hero image from frontmatter path
+    const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
+
     const allPosts: Post[] = [];
 
     for (const path in posts) {
         const post = posts[path] as { metadata: Post['metadata'] };
         const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
+        // Resolve hero image for thumbnails
+        const heroResolved = lookupHeroImage(post.metadata.hero);
+        const hero = heroResolved?.img.src ?? post.metadata.hero;
+
         allPosts.push({
             slug,
-            metadata: post.metadata
+            metadata: {
+                ...post.metadata,
+                hero
+            }
         });
     }
 
@@ -35,7 +46,10 @@ export function load() {
 
     return {
         content: pageData.default,
-        metadata: pageData.metadata,
+        metadata: {
+            ...pageData.metadata,
+            heroImage
+        },
         posts: allPosts
     };
 }

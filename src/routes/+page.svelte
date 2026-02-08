@@ -24,7 +24,7 @@
 		<div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
 			<div class="w-full md:w-1/2 max-w-[400px] mx-auto">
 				<img
-					src={data.metadata.aboutPhoto ?? '/src/lib/assets/imgs/pages/brian-640x.jpg'}
+					src={data.metadata.aboutPhoto}
 					alt="Brian Cruikshank"
 					class="w-full rounded-lg shadow-lg"
 				/>
@@ -50,8 +50,7 @@
 	<div
 		class="h-[70vh] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
 		style="background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)), url('{data
-			.metadata.photoHighlight ??
-			'/src/lib/assets/imgs/pages/photo-highlight-1920x.jpg'}'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
+			.metadata.photoHighlight}'); box-shadow: inset 0 0 8px rgba(0,0,0,0.4);"
 	>
 		<a
 			href="/photos"

@@ -28,9 +28,16 @@ export function load() {
         const post = posts[path] as { metadata: Post['metadata'] };
         const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 
+        // Resolve hero image for thumbnails
+        const heroResolved = lookupHeroImage(post.metadata.hero);
+        const hero = heroResolved?.img.src ?? post.metadata.hero;
+
         allPosts.push({
             slug,
-            metadata: post.metadata
+            metadata: {
+                ...post.metadata,
+                hero
+            }
         });
     }
 
@@ -41,11 +48,20 @@ export function load() {
     // Resolve hero image from frontmatter path
     const heroImage = lookupHeroImage(pageData.metadata.hero) ?? pageData.metadata.hero;
 
+    // Resolve other images - extract URL string for use in img src and CSS
+    const aboutPhotoResolved = lookupHeroImage(pageData.metadata.aboutPhoto);
+    const aboutPhoto = aboutPhotoResolved?.img.src ?? pageData.metadata.aboutPhoto;
+
+    const photoHighlightResolved = lookupHeroImage(pageData.metadata.photoHighlight);
+    const photoHighlight = photoHighlightResolved?.img.src ?? pageData.metadata.photoHighlight;
+
     return {
         content: pageData.default,
         metadata: {
             ...pageData.metadata,
-            heroImage
+            heroImage,
+            aboutPhoto,
+            photoHighlight
         },
         latestPosts: allPosts.slice(0, 6)
     };
