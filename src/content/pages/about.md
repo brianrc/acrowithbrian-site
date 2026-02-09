@@ -4,25 +4,17 @@ path: /about
 title: About
 hero: /imgs/pages/about-1920x.jpg
 ---
-Hi! I'm Brian Cruikshank. I am a certified Acro Revolution teacher based in Washington, D.C.
+Brian Cruikshank is a certified <a href="https://acrolove.org/pages/acrolove-teacher" target="_blank" rel="noopener noreferrer">AcroLove teacher</a>. He was formerly based in Washington, D.C. and now is a nomadic world traveler.
 
-I've been practicing acro for over 6 years, traveling the country, and learning some of the most advanced movements and techniques. 
+He's been practicing AcroYoga for over 15 years and has mastered some of the most advanced movements and techniques. 
 
-Some large events I've taught acro at include NY Acrofest, AcroLove East Coast, DC Acrobatic Convention, and the Interfusion Festival. 
+He used to teach regular classes in Washington, D.C. with Maren Hill. He also taught at many festivals including NY Acrofest, AcroLove East Coast, DC Acrobatic Convention, and the Interfusion Festival. 
 
-When I'm not teaching I'm always learning. I'm also an avid rock climber, traveler, and activist for things that matter.
-
-### Private Lessons
-I offer 1.5 hour private acro lessons for $90. You can include up to 2 friends at no extra charge.
-
-### Classes and Workshops
-I co-teach a regular class with Maren Hill at Earth Treks Crystal City every 1st and 3rd Monday of the month at 8:30pm.
-
-Maren and I sometimes offer intermediate workshops too and travel to festivals. Check the events page.
+When he's not doing acro, he's also an avid rock climber, world explorer, and activist for things that matter.
 
 ### Photography
-I've been photographing acro and events for 3 years. All the pictures on this site are mine. Let me know if you're interested in photography.
+He has photographed a few acro events and a lot of personal projects. All the pictures on this site are his. 
 
 ### Web Development
-I design and build professional websites for a living including the one you see here. You can find more of my work at https://www.brianswebstudio.com
+He used to design and build websites professionally including the one you see here. Now he just does it for fun.
 

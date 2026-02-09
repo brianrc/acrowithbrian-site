@@ -9,4 +9,4 @@ photoHighlight: /imgs/pages/photo-highlight-1920x.jpg
 aboutPhotoBig: /imgs/pages/brian-1080x.jpg
 ---
 
-I am a certified Acro Revolution teacher based in Washington, DC. Over the years I've traveled the country going to many festivals, training hard, and playing with some of the most advanced acrobats. In that time I've learned some unique skills and valuable techniques. I want to share this knowledge with you.
+I'm a certified AcroLove teacher who traded the DC skyline for a life on the move. My journey as a nomadic traveler has taken me to world-class festivals and events, where I’ve swapped skills with some of the most advanced practitioners. This is a journal of my teaching and some of the skills I've learned along the way.
