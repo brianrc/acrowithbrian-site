@@ -1,42 +1,19 @@
-# sv
+# Acro with Brian
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is my personal acro yoga teacher website. It includes an event listing, blog of acroyoga videos, a photo gallery, and contact form.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+This site is built with a modern, high-performance stack:
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- **Framework**: [Svelte 5](https://svelte.dev/) & [SvelteKit 2](https://kit.svelte.dev/)
+    - Fully static site generation (SSG) for maximum performance.
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+    - Modern, utility-first CSS integration.
+- **Content**: [MDSVex](https://mdsvex.pngwn.io/)
+    - Markdown-based management for blog posts and events.
+- **Image Pipeline**: Custom `sharp`-based optimization script.
+    - Automatic **AVIF** conversion for all site images.
+    - Incremental processing with manifest tracking.
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-pnpm dlx sv create --template minimal --types ts --install pnpm acrowithbrian-site
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Hosted on Netlify.
